@@ -3,7 +3,6 @@ findPalindrome	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/005_Longest_Palindr
 longestPalindrome	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/005_Longest_Palindromic_Substring.py	/^    def longestPalindrome(self, s: str) -> str:$/;"	m	language:Python	class:Solution
 maxSubArray	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/053_Maximum_Subarray.py	/^    def maxSubArray(self, nums: List[int]) -> int:$/;"	m	language:Python	class:Solution
 merge	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/088_Merge_Sorted_Array.py	/^            -> None:$/;"	m	language:Python	class:Solution
-plusOne	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/66_Plus_One.py	/^    def plusOne(self, digits: List[int]) -> List[int]:$/;"	m	language:Python	class:Solution
 removeDuplicates	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/026_Remove_Duplicates_from_Sorted_Array.py	/^    def removeDuplicates(self, nums: List[int]) -> int:$/;"	m	language:Python	class:Solution
 removeElement	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/027_Remove_Element.py	/^    def removeElement(self, nums: List[int], val: int) -> int:$/;"	m	language:Python	class:Solution
 s	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/005_Longest_Palindromic_Substring.py	/^    s = "abadd"$/;"	v	language:Python	class:Solution
@@ -14,11 +13,9 @@ Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/027_Remove_Element.py	/^c
 Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/035_Search_Insert_Position.py	/^class Solution:$/;"	c	language:Python
 Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/053_Maximum_Subarray.py	/^class Solution:$/;"	c	language:Python
 Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/088_Merge_Sorted_Array.py	/^class Solution:$/;"	c	language:Python
-Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/66_Plus_One.py	/^class Solution:$/;"	c	language:Python
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/005_Longest_Palindromic_Substring.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/026_Remove_Duplicates_from_Sorted_Array.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/027_Remove_Element.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/035_Search_Insert_Position.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/053_Maximum_Subarray.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/088_Merge_Sorted_Array.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
-test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/66_Plus_One.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
