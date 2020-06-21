@@ -2,32 +2,33 @@ from typing import List
 
 
 class Solution:
+    #  def removeDuplicates(self, nums: List[int]) -> int:
+    #      if len(nums) < 2:
+    #          return len(nums)
+
+    #      previous = 0
+    #      current = 1
+    #      while True:
+    #          if nums[current] != nums[previous]:
+    #              if current - 1 == previous:
+    #                  current += 1
+    #                  previous += 1
+    #              else:
+    #                  nums[previous:current] = [nums[previous], nums[current]]
+    #                  previous += 1
+    #                  current = previous + 1
+    #          else:
+    #              current += 1
+
+    #          if current >= len(nums):
+    #              break
+
+    #      if current - previous > 1:
+    #          nums[previous:] = [nums[previous]]
+
+    #      return len(nums)
+
     def removeDuplicates(self, nums: List[int]) -> int:
-        #  if len(nums) < 2:
-        #      return len(nums)
-
-        #  previous = 0
-        #  current = 1
-        #  while True:
-        #      if nums[current] != nums[previous]:
-        #          if current - 1 == previous:
-        #              current += 1
-        #              previous += 1
-        #          else:
-        #              nums[previous:current] = [nums[previous], nums[current]]
-        #              previous += 1
-        #              current = previous + 1
-        #      else:
-        #          current += 1
-
-        #      if current >= len(nums):
-        #          break
-
-        #  if current - previous > 1:
-        #      nums[previous:] = [nums[previous]]
-
-        #  return len(nums)
-
         if len(nums) < 2:
             return len(nums)
         previous = 0

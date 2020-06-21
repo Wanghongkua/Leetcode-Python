@@ -1,6 +1,8 @@
 !_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
 containsDuplicate	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/217_Contains_Duplicate.py	/^    def containsDuplicate(self, nums: List[int]) -> bool:$/;"	m	language:Python	class:Solution
 containsNearbyDuplicate	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/219_Contains_Duplicate_II.py	/^    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:$/;"	m	language:Python	class:Solution
+countPrimes	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/204_Count_Primes.py	/^    def countPrimes(self, n: int) -> int:$/;"	m	language:Python	class:Solution
+findDisappearedNumbers	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/448_Find_All_Numbers_Disappeared_in_an_Array.py	/^    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:$/;"	m	language:Python	class:Solution
 findPalindrome	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/005_Longest_Palindromic_Substring.py	/^    def findPalindrome(self, s, i, j):$/;"	m	language:Python	class:Solution
 generate	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/118_Pascal's_Triangle.py	/^    def generate(self, numRows: int) -> List[List[int]]:$/;"	m	language:Python	class:Solution
 getRow	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/119_Pascal's_Triangle_II.py	/^    def getRow(self, rowIndex: int) -> List[int]:$/;"	m	language:Python	class:Solution
@@ -31,10 +33,13 @@ Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/122_Best_Time_to_Buy_and_
 Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/167_Two_Sum_II_-_Input_array_is_sorted.py	/^class Solution:$/;"	c	language:Python
 Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/169_Majority_Element.py	/^class Solution:$/;"	c	language:Python
 Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/189_Rotate_Array.py	/^class Solution:$/;"	c	language:Python
+Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/204_Count_Primes.py	/^class Solution:$/;"	c	language:Python
 Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/217_Contains_Duplicate.py	/^class Solution:$/;"	c	language:Python
 Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/219_Contains_Duplicate_II.py	/^class Solution:$/;"	c	language:Python
 Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/268_Missing_Number.py	/^class Solution:$/;"	c	language:Python
 Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/283_Move_Zeroes.py	/^class Solution:$/;"	c	language:Python
+Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/414_Third_Maximum_Number.py	/^class Solution:$/;"	c	language:Python
+Solution	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/448_Find_All_Numbers_Disappeared_in_an_Array.py	/^class Solution:$/;"	c	language:Python
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/005_Longest_Palindromic_Substring.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/026_Remove_Duplicates_from_Sorted_Array.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/027_Remove_Element.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
@@ -48,8 +53,12 @@ test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/122_Best_Time_to_Buy_and_Sell
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/167_Two_Sum_II_-_Input_array_is_sorted.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/169_Majority_Element.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/189_Rotate_Array.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
+test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/204_Count_Primes.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/217_Contains_Duplicate.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/219_Contains_Duplicate_II.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/268_Missing_Number.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
 test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/283_Move_Zeroes.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
+test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/414_Third_Maximum_Number.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
+test	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/448_Find_All_Numbers_Disappeared_in_an_Array.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
+thirdMax	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/414_Third_Maximum_Number.py	/^    def thirdMax(self, nums: List[int]) -> int:$/;"	m	language:Python	class:Solution
 twoSum	/Users/HankWang/Dropbox/Stuff/LeetCode/Python/167_Two_Sum_II_-_Input_array_is_sorted.py	/^    def twoSum(self, numbers: List[int], target: int) -> List[int]:$/;"	m	language:Python	class:Solution
