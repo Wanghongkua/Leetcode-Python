@@ -9,4 +9,4 @@ difficulty. Besides, there will be explanation for each question.
 
 | #   | Title                                             | Solutions                               |
 | --- | ------------------------------------------------- | --------------------------------------- |
-| 1   | [Two Sum](https://leetcode.com/problems/two-sum/) | [Python](Array_Easy/Two_Sum/readme.md) |
+| 1   | [Two Sum](https://leetcode.com/problems/two-sum/) | [Python](Array_Easy/Two_Sum) |
