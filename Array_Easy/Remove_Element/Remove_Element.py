@@ -10,11 +10,13 @@ class Solution:
         index = 0
 
         while index <= replaceIndex:
+            if nums[replaceIndex] == val:
+                replaceIndex -= 1
+                continue
             if nums[index] == val:
                 nums[index] = nums[replaceIndex]
                 replaceIndex -= 1
-            else:
-                index += 1
+            index += 1
         return index
 
 
