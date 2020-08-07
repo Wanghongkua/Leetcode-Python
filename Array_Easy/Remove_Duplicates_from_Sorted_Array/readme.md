@@ -50,7 +50,8 @@ for (int i = 0; i < len; i++) {
 The reasons why two pointers method is appropriate are:
 
 1. There is 2 positions involved
-2. They don't need to look back ( **i.e.**, Array is **sorted**, so the information traversed is not needed )
+2. The information traversed is not needed, so they don't need to look back 
+   > **i.e.**, Array is **sorted**.
 
 ```python
 def removeDuplicates(self, nums: List[int]) -> int:
