@@ -1,0 +1,5 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+List	/Users/hongkuanwang/Dropbox/Stuff/LeetCode/Python/Array_Easy/Remove_Element/Remove_Element.py	/^from typing import List$/;"	i	language:Python
+removeElement	/Users/hongkuanwang/Dropbox/Stuff/LeetCode/Python/Array_Easy/Remove_Element/Remove_Element.py	/^    def removeElement(self, nums: List[int], val: int) -> int:$/;"	m	language:Python	class:Solution
+Solution	/Users/hongkuanwang/Dropbox/Stuff/LeetCode/Python/Array_Easy/Remove_Element/Remove_Element.py	/^class Solution:$/;"	c	language:Python
+test	/Users/hongkuanwang/Dropbox/Stuff/LeetCode/Python/Array_Easy/Remove_Element/Remove_Element.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
