@@ -7,10 +7,18 @@ difficulty. Besides, there will be explanation for each question.
 
 #### Easy
 
-| #   | Title                                     | Solutions                                                |
-| --- | ----------------------------------------- | -------------------------------------------------------- |
-| 1   | [Two Sum][1]                              | [Python](Array_Easy/Two_Sum)                             |
-| 32  | [Remove Duplicates from Sorted Array][32] | [Python](Array_Easy/Remove_Duplicates_from_Sorted_Array) |
+| #   | Title                                     | Solutions      | Code           |
+| --- | ----------------------------------------- | -------------- | -------------- |
+| 1   | [Two Sum][1]                              | [Answer][1_a]  | [Python][1_c]  |
+| 26  | [Remove Duplicates from Sorted Array][26] | [Answer][26_a] | [Python][26_c] |
+| 27  | [Remove Element][27]                      | [Answer][27_a] | [Python][27_c] |
 
 [1]: https://leetcode.com/problems/two-sum/
-[32]: http://leetcode.com/problems/remove-duplicates-from-sorted-array/
+[1_a]: Array_Easy/Two_Sum
+[1_c]: Array_Easy/Two_Sum/Two_Sum.py
+[26]: http://leetcode.com/problems/remove-duplicates-from-sorted-array/
+[26_a]: Array_Easy/Remove_Duplicates_from_Sorted_Array
+[26_c]: Array_Easy/Remove_Duplicates_from_Sorted_Array/Remove_Duplicates_from_Sorted_Array.py
+[27]: https://leetcode.com/problems/remove-element/
+[27_a]: Array_Easy/Remove_Element
+[27_c]: Array_Easy/Remove_Element/Remove_Element.py
