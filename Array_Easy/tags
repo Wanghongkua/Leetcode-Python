@@ -1,5 +1,0 @@
-!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
-List	/Users/hongkuanwang/Dropbox/Stuff/LeetCode/Python/Array_Easy/Two_Sum.py	/^from typing import List$/;"	i	language:Python
-Solution	/Users/hongkuanwang/Dropbox/Stuff/LeetCode/Python/Array_Easy/Two_Sum.py	/^class Solution:$/;"	c	language:Python
-test	/Users/hongkuanwang/Dropbox/Stuff/LeetCode/Python/Array_Easy/Two_Sum.py	/^    test = Solution()$/;"	v	language:Python	class:Solution
-twoSum	/Users/hongkuanwang/Dropbox/Stuff/LeetCode/Python/Array_Easy/Two_Sum.py	/^    def twoSum(self, nums: List[int], target: int) -> List[int]:$/;"	m	language:Python	class:Solution
