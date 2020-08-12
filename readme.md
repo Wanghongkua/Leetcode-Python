@@ -25,4 +25,4 @@ difficulty. Besides, there will be explanation for each question.
 [27_c]: Array_Easy/Remove_Element/Remove_Element.py
 [35]: https://leetcode.com/problems/search-insert-position/
 [35_a]: Array_Easy/Search_Insert_Position
-[35_c]: Array_Easy/Positionch_Insert_Position/Search_Insert_Position.py
+[35_c]: Array_Easy/Search_Insert_Position/Search_Insert_Position.py
