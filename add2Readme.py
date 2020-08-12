@@ -23,7 +23,7 @@ code = number + "_c"
 list_line = "|" + number + \
     "|" + "[" + " ".join(sys.argv[2:]) + "][" + number + "]" + \
     "|" + "[Answer][" + answer + "]" + \
-    "|" + "[Python][" + code + "]|" + "\n"
+    "|" + "[Python][" + code + "]||" + "\n"
 url_line = "[" + number + "]: " + url + "\n"
 answer_line = "[" + answer + "]: " + current_folder + folder_name + "/" + "\n"
 code_line = "[" + code + "]: " + current_folder + folder_name + "/" + folder_name + ".py"
