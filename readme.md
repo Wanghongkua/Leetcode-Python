@@ -19,12 +19,13 @@ difficulty. Besides, there will be explanation for each question.
 
 #### Easy
 
-| #   | Title                                     | Solutions      | Code           | Basic Ideas    |
-| --- | ----------------------------------------- | -------------- | -------------- | ------------- |
-| 1   | [Two Sum][1]                              | [Answer][1_a]  | [Python][1_c]  |1. Hash Table<br>2. One-Pass Hash Table|
-| 26  | [Remove Duplicates from Sorted Array][26] | [Answer][26_a] | [Python][26_c] |1. Two Pointers|
-| 27  | [Remove Element][27]                      | [Answer][27_a] | [Python][27_c] |1. Two Pointers|
-| 35  | [Search Insert Position][35]              | [Answer][35_a] | [Python][35_c] |1. Binary Search<br>2. Optimisation|
+| #   | Title                                     | Solutions      | Code           | Basic Ideas                             |
+| --- | ----------------------------------------- | -------------- | -------------- | --------------------------------------- |
+| 1   | [Two Sum][1]                              | [Answer][1_a]  | [Python][1_c]  | 1. Hash Table<br>2. One-Pass Hash Table |
+| 26  | [Remove Duplicates from Sorted Array][26] | [Answer][26_a] | [Python][26_c] | 1. Two Pointers                         |
+| 27  | [Remove Element][27]                      | [Answer][27_a] | [Python][27_c] | 1. Two Pointers                         |
+| 35  | [Search Insert Position][35]              | [Answer][35_a] | [Python][35_c] | 1. Binary Search<br>2. Optimisation     |
+| 53  | [Maximum Subarray][53]                    | [Answer][53_a] | [Python][53_c] |                                         |
 
 [1]: https://leetcode.com/problems/two-sum/
 [1_a]: Array_Easy/Two_Sum
@@ -38,3 +39,6 @@ difficulty. Besides, there will be explanation for each question.
 [35]: https://leetcode.com/problems/search-insert-position/
 [35_a]: Array_Easy/Search_Insert_Position
 [35_c]: Array_Easy/Search_Insert_Position/Search_Insert_Position.py
+[53]: https://leetcode.com/problems/maximum-subarray/
+[53_a]: Array_Easy/Maximum_Subarray/
+[53_c]: Array_Easy/Maximum_Subarray/Maximum_Subarray.py

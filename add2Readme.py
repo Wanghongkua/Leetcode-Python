@@ -26,7 +26,7 @@ list_line = "|" + number + \
     "|" + "[Python][" + code + "]||" + "\n"
 url_line = "[" + number + "]: " + url + "\n"
 answer_line = "[" + answer + "]: " + current_folder + folder_name + "/" + "\n"
-code_line = "[" + code + "]: " + current_folder + folder_name + "/" + folder_name + ".py"
+code_line = "[" + code + "]: " + current_folder + folder_name + "/" + folder_name + ".py\n"
 
 print("Opening \"readme.md\"")
 with open(file_path, "r+") as f:
