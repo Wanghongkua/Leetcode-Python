@@ -25,7 +25,25 @@ class Solution:
         #      return end + 1
         #  return end
         """
-        Optimisation
+        Improvement on avoiding checking "middle" on mismatch
+        """
+        #  start = 0
+        #  end = len(nums) - 1
+        #  while start < end:
+        #      middle = (start + end) // 2
+        #      if nums[middle] < target:
+        #          start = middle + 1
+        #      elif nums[middle] > target:
+        #          end = middle
+        #      else:
+        #          start = middle
+        #          break
+        #  if nums[start] >= target:
+        #      return start
+        #  else:
+        #      return start + 1
+        """
+        Less code but slower
         """
         start = 0
         end = len(nums) - 1
@@ -33,11 +51,8 @@ class Solution:
             middle = (start + end) // 2
             if nums[middle] < target:
                 start = middle + 1
-            elif nums[middle] > target:
-                end = middle
             else:
-                start = middle
-                break
+                end = middle
         if nums[start] >= target:
             return start
         else:

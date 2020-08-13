@@ -50,7 +50,7 @@ with open("readme.md", "r+") as index_file:
             contents = f.readlines()
             comments = findCommentLine(contents)
         for index, line in enumerate(index_contents):
-            if folder_name.replace("_", " ") in line:
+            if folder_name.replace("_", " ") in line and "|" in line:
                 position = findPosition(line)
                 line = line[:position + 1] + comments + "|\n"
                 index_contents[index] = line
