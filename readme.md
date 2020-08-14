@@ -19,13 +19,13 @@ difficulty. Besides, there will be explanation for each question.
 
 #### Easy
 
-| #   | Title                                     | Solutions      | Code           | Basic Ideas                                                                                             |
-| --- | ----------------------------------------- | -------------- | -------------- | ------------------------------------------------------------------------------------------------------- |
-| 1   | [Two Sum][1]                              | [Answer][1_a]  | [Python][1_c]  | 1. Hash Table<br>2. One-Pass Hash Table                                                                 |
-| 26  | [Remove Duplicates from Sorted Array][26] | [Answer][26_a] | [Python][26_c] | 1. Two Pointers                                                                                         |
-| 27  | [Remove Element][27]                      | [Answer][27_a] | [Python][27_c] | 1. Two Pointers                                                                                         |
-| 35  | [Search Insert Position][35]              | [Answer][35_a] | [Python][35_c] | 1. Binary Search<br>2. Improvement on avoiding checking "middle" on mismatch<br>3. Less code but slower |
-| 53  | [Maximum Subarray][53]                    | [Answer][53_a] | [Python][53_c] |                                                                                                         |
+| #  | Title                                     | Explanation    | Code           | Basic Ideas                                                                                             |
+|----|-------------------------------------------|----------------|----------------|---------------------------------------------------------------------------------------------------------|
+| 1  | [Two Sum][1]                              | [Answer][1_a]  | [Python][1_c]  |1. Hash Table<br>2. One-Pass Hash Table|
+| 26 | [Remove Duplicates from Sorted Array][26] | [Answer][26_a] | [Python][26_c] |1. Two Pointers|
+| 27 | [Remove Element][27]                      | [Answer][27_a] | [Python][27_c] |1. Two Pointers|
+| 35 | [Search Insert Position][35]              | [Answer][35_a] | [Python][35_c] |1. Binary Search<br>2. Improvement on avoiding checking "middle" on mismatch<br>3. Less code but slower|
+| 53 | [Maximum Subarray][53]                    | [Answer][53_a] | [Python][53_c] |1. Dynamic Programming<br>2. Less code version of DP|
 
 [1]: https://leetcode.com/problems/two-sum/
 [1_a]: Array_Easy/Two_Sum
