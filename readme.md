@@ -26,6 +26,7 @@ difficulty. Besides, there will be explanation for each question.
 | 27 | [Remove Element][27]                      | [Answer][27_a] | [Python][27_c] |1. Two Pointers|
 | 35 | [Search Insert Position][35]              | [Answer][35_a] | [Python][35_c] |1. Binary Search<br>2. Improvement on avoiding checking "middle" on mismatch<br>3. Less code but slower|
 | 53 | [Maximum Subarray][53]                    | [Answer][53_a] | [Python][53_c] |1. Dynamic Programming<br>2. Less code version of DP|
+|66|[Plus One][66]|[Answer][66_a]|[Python][66_c]|1. Test equal to `9`|
 
 [1]: https://leetcode.com/problems/two-sum/
 [1_a]: Array_Easy/Two_Sum
@@ -42,3 +43,6 @@ difficulty. Besides, there will be explanation for each question.
 [53]: https://leetcode.com/problems/maximum-subarray/
 [53_a]: Array_Easy/Maximum_Subarray/
 [53_c]: Array_Easy/Maximum_Subarray/Maximum_Subarray.py
+[66]: https://leetcode.com/problems/plus-one/
+[66_a]: Array_Easy/Plus_One/
+[66_c]: Array_Easy/Plus_One/Plus_One.py

@@ -54,6 +54,8 @@ with open("readme.md", "r+") as index_file:
                 position = findPosition(line)
                 line = line[:position + 1] + comments + "|\n"
                 index_contents[index] = line
-
+    for line in index_contents:
+        print(line)
     index_file.seek(0)
+    index_file.truncate()
     index_file.writelines(index_contents)
