@@ -27,6 +27,7 @@ difficulty. Besides, there will be explanation for each question.
 | 35 | [Search Insert Position][35]              | [Answer][35_a] | [Python][35_c] |1. Binary Search<br>2. Improvement on avoiding checking "middle" on mismatch<br>3. Less code but slower|
 | 53 | [Maximum Subarray][53]                    | [Answer][53_a] | [Python][53_c] |1. Dynamic Programming<br>2. Less code version of DP|
 |66|[Plus One][66]|[Answer][66_a]|[Python][66_c]|1. Test equal to `9`|
+|88|[Merge Sorted Array][88]|[Answer][88_a]|[Python][88_c]|1. Two Pointer<br>2. Optimisation for TP|
 
 [1]: https://leetcode.com/problems/two-sum/
 [1_a]: Array_Easy/Two_Sum
@@ -46,3 +47,6 @@ difficulty. Besides, there will be explanation for each question.
 [66]: https://leetcode.com/problems/plus-one/
 [66_a]: Array_Easy/Plus_One/
 [66_c]: Array_Easy/Plus_One/Plus_One.py
+[88]: https://leetcode.com/problems/merge-sorted-array/
+[88_a]: Array_Easy/Merge_Sorted_Array/
+[88_c]: Array_Easy/Merge_Sorted_Array/Merge_Sorted_Array.py
