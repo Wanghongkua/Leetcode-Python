@@ -147,7 +147,8 @@ def add2Readme(tag: str, difficulty: str, number: str, problem_name: str):
         last_empty_index = len(contents) - 1
         while last_empty_index >= 0:
             if contents[last_empty_index] == "\n":
-                contents[last_empty_index + 1:] = sorted(contents[last_empty_index + 1:], key=sortFunc)
+                contents[last_empty_index + 1:] = sorted(contents[
+                    last_empty_index + 1:], key=sortFunc)
                 break
             last_empty_index -= 1
         f.seek(0)
