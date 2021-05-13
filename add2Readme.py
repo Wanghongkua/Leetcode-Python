@@ -1,9 +1,10 @@
 import sys
 import subprocess
 import argparse
+from termcolor import colored
 
 
-def generateURL(problem_name, concatenatingChar):
+def generateURL(problem_name: str, concatenatingChar: str) -> str:
     """ Generate URL for question, answer and code.  """
     URL = "https://leetcode.com/problems/"
     gitLink = ""
@@ -12,30 +13,49 @@ def generateURL(problem_name, concatenatingChar):
     return gitLink
 
 
-def computeFolderName(tags, difficulty, concatenatingChar):
-    """ Compute folder name """
-    return tags.capitalize() + concatenatingChar + difficulty.capitalize() \
-        + "/"
+def getArg(argName: str) -> str:
+    """ Get the argument by it's name from input """
+    arg = None
+    while True:
+        end = False
+        output_string = "Please specify " + argName + " of the problem: "
+        arg = input(output_string)
+        print("The inputed", argName, "is:", colored(arg, "red"))
+        print("Are you sure?", end=" ")
+        end = input("Y for yes, N for no: ")
+        if end == "Y" or end == "y":
+            break
+    return arg
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-t", "--tags", help="The category of the problem")
+parser.add_argument("-t", "--tag", help="The category of the problem")
 parser.add_argument("-d", "--difficulty", choices=["easy", "medium", "hard"],
                     help="The difficulty level of the problem")
 parser.add_argument("-i", "--index", type=int, help="The index of the problem")
 parser.add_argument("-n", "--name", help="Name of the problem")
 args = parser.parse_args()
 
+tag = args.tag
+if tag is None:
+    tag = getArg("category")
+
+difficulty = args.difficulty
+if difficulty is None:
+    difficulty = getArg("difficulty")
+
+print(tag, difficulty)
+
+sys.exit()
+
 concatenatingChar = "_"
 
-current_folder = computeFolderName(args.tags, args.difficulty,
-                                   concatenatingChar)
+#  current_folder = computeFolderName(args.tags, args.difficulty,
+#                                     concatenatingChar)
 
 problem_name = args.name
 
 number = args.number
-
-sys.exit()
 
 gitLink = generateURL(problem_name, concatenatingChar)
 
