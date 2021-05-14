@@ -1,4 +1,5 @@
 import sys
+import os
 import subprocess
 import argparse
 from termcolor import colored
@@ -63,8 +64,8 @@ def findInsertPosition(contents, tag_line, diff_line):
             elif content[:4] == "### ":
                 break
 
-    title_line = "|#|Title|Explanation|Code|BasicIdeas|\n"
-    table_line = "|-|-----|-----------|----|----------|\n"
+    title_line = "|#|Title|Explanation|Code|Basic Ideas|\n"
+    table_line = "|-|-----|-----------|----|-----------|\n"
     # Tag not found
     if not found_tag:
         new_content = ["\n", tag_line, "\n", diff_line, "\n",
@@ -91,6 +92,13 @@ def sortFunc(line: str):
         return int(line[1:line.find("]")])
 
 
+def getCurrentFolder(tag: str, difficulty: str) -> str:
+    """Get current working directory"""
+    tag_folder = tag.replace(" ", "_")
+    diff_folder = difficulty.capitalize()
+    return tag_folder + "/" + diff_folder + "/"
+
+
 def add2Readme(tag: str, difficulty: str, number: str, problem_name: str):
     """ Add problem to readme
 
@@ -102,14 +110,11 @@ def add2Readme(tag: str, difficulty: str, number: str, problem_name: str):
     """
     #  Format inputs
     tag = capitalizeArg(tag)
-    #  problem_name = capitalizeArg(problem_name)
 
     # Construct links
     concatenating_char = "_"
 
-    tag_folder = tag.replace(" ", "_")
-    diff_folder = difficulty.capitalize()
-    current_folder = tag_folder + "/" + diff_folder + "/"
+    current_folder = getCurrentFolder(tag, difficulty)
 
     git_link = generateURL(problem_name, concatenating_char)
 
@@ -155,10 +160,51 @@ def add2Readme(tag: str, difficulty: str, number: str, problem_name: str):
         f.writelines(contents)
         print("Closing \"readme.md\"")
 
-    #  print("start creating files for current question")
-    #  bash_script = ["./add_new.sh"]
-    #  val = subprocess.run(bash_script + sys.argv[2:], cwd=current_folder)
-    #  print("The bash script result is:", val)
+
+def createFile(current_folder: str, problem_name: str):
+    """Create Problem Folder"""
+    print("Do you want to create file for " + colored(problem_name, "red") +
+          " within folder " + colored(current_folder, "red"))
+    create_file = input("Y for yes, N for no: ")
+    if create_file == "Y" or create_file == "y":
+        pass
+    else:
+        return
+    if not os.path.isdir(current_folder):
+        print("start creating " + current_folder + " for current question")
+        subprocess.run(["mkdir", "-p", current_folder])
+        print("Done")
+
+    print("start creating files for current question")
+    bash_script = ["../../add_new.sh"]
+    val = subprocess.run(bash_script + problem_name.split(" "),
+                         cwd=current_folder)
+    print("The bash script result is:", val)
+
+
+def existInReadme(number: int) -> int:
+    """ Find existence of current question in readme.md """
+    file_path = "readme.md"
+    with open(file_path, "r") as f:
+        contents = f.readlines()
+        index = len(contents) - 1
+        line = contents[index]
+        while line != "\n":
+            if "_" not in line:
+                line_number = int(line[1:line.find("]")])
+                if line_number == number:
+                    return 1
+            index -= 1
+            line = contents[index]
+    return 0
+
+
+def existInFile(current_folder: str, problem_name: str) -> int:
+    """Test existence of problem folder"""
+    problem_folder = current_folder + "/" + problem_name.replace(" ", "_")
+    if os.path.isdir(problem_folder):
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
@@ -189,4 +235,9 @@ if __name__ == "__main__":
 
     number = str(args.index)
 
-    add2Readme(tag, difficulty, number, problem_name)
+    if not existInReadme(int(number)):
+        add2Readme(tag, difficulty, number, problem_name)
+    tag = capitalizeArg(tag)
+    current_folder = getCurrentFolder(tag, difficulty)
+    if not existInFile(current_folder, problem_name):
+        createFile(current_folder, problem_name)

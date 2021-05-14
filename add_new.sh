@@ -19,11 +19,15 @@ python_file="$file/$file$python_file"
 readme_file="$file/$readme_file"
 gitignore="$file/$gitignore"
 
+# echo $file
+# echo $python_file
+# echo $readme_file
+# echo $gitignore
 
 if [[ -d $file ]]; then
     echo "Directory already exists, please check to avoid replace."
 else
-    mkdir $file
+    mkdir -p $file
     touch "$python_file"
     touch "$readme_file"
     touch "$gitignore"

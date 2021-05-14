@@ -33,11 +33,17 @@ explanation for each question.
 | 88  | [Merge Sorted Array][88]                  | [Answer][88_a]  | [Python][88_c]  | 1. Two Pointer<br>2. Optimisation for TP                                                                |
 | 118 | [Pascals Triangle][118]                   | [Answer][118_a] | [Python][118_c] |                                                                                                         |
 
+#### Medium
+
+| #   | Title                           | Explanation    | Code           | Basic Ideas |
+| --- | ------------------------------- | -------------- | -------------- | ----------- |
+| 11  | [Container With Most Water][11] | [Answer][11_a] | [Python][11_c] |             |
+
 #### Hard
 
-| #   | Title                            | Explanation   | Code          | BasicIdeas |
-| --- | -------------------------------- | ------------- | ------------- | ---------- |
-| 4   | [Median of Two Sorted Arrays][4] | [Answer][4_a] | [Python][4_c] |            |
+| #   | Title                            | Explanation   | Code          | Basic Ideas |
+| --- | -------------------------------- | ------------- | ------------- | ----------- |
+| 4   | [Median of Two Sorted Arrays][4] | [Answer][4_a] | [Python][4_c] |             |
 
 [1]: https://leetcode.com/problems/two-sum/
 [1_a]: Array/Easy/Two_Sum
@@ -45,6 +51,9 @@ explanation for each question.
 [4]: https://leetcode.com/problems/median-of-two-sorted-arrays/
 [4_a]: Array/Hard/Median_of_Two_Sorted_Arrays/
 [4_c]: Array/Hard/Median_of_Two_Sorted_Arrays/Median_of_Two_Sorted_Arrays.py
+[11]: https://leetcode.com/problems/container-with-most-water/
+[11_a]: Array/Medium/Container_With_Most_Water/
+[11_c]: Array/Medium/Container_With_Most_Water/Container_With_Most_Water.py
 [26]: http://leetcode.com/problems/remove-duplicates-from-sorted-array/
 [26_a]: Array/Easy/Remove_Duplicates_from_Sorted_Array
 [26_c]: Array/Easy/Remove_Duplicates_from_Sorted_Array/Remove_Duplicates_from_Sorted_Array.py
