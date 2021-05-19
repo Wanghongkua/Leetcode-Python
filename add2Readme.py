@@ -1,4 +1,3 @@
-import sys
 import os
 import subprocess
 import argparse
@@ -16,9 +15,9 @@ def generateURL(problem_name: str, concatenating_char: str) -> str:
 
 def capitalizeArg(arg: str) -> str:
     """ capitalize argument """
-    args = arg.split(" ")
-    args = [arg.capitalize() for arg in args]
-    return " ".join(args)
+    arg_list = arg.split(" ")
+    arg_list = [arg.capitalize() for arg in arg_list]
+    return " ".join(arg_list)
 
 
 def getArg(argName: str) -> str:
