@@ -4,7 +4,7 @@ import argparse
 from termcolor import colored
 
 
-def generateURL(problem_name: str, concatenating_char: str) -> str:
+def generateURL(problem_name: str) -> str:
     """ Generate URL for question, answer and code.  """
     URL = "https://leetcode.com/problems/"
     git_link = ""
@@ -101,21 +101,18 @@ def getCurrentFolder(tag: str, difficulty: str) -> str:
 def add2Readme(tag: str, difficulty: str, number: str, problem_name: str):
     """ Add problem to readme
 
-    : tag          : The category of the problem
-    : difficulty   : The difficulty of the problem
-    : number       : The index of the problem
-    : problem_name : The name of the problem
+    :tag:          The category of the problem
+    :difficulty:   The difficulty of the problem
+    :number:       The index of the problem
+    :problem_name: The name of the problem
 
     """
     #  Format inputs
     tag = capitalizeArg(tag)
 
-    # Construct links
-    concatenating_char = "_"
-
     current_folder = getCurrentFolder(tag, difficulty)
 
-    git_link = generateURL(problem_name, concatenating_char)
+    git_link = generateURL(problem_name)
 
     answer = number + "_a"
     code = number + "_c"
@@ -158,6 +155,16 @@ def add2Readme(tag: str, difficulty: str, number: str, problem_name: str):
         f.seek(0)
         f.writelines(contents)
         print("Closing \"readme.md\"")
+
+
+def getQuestionDescription(problem_name: str, readme_file: str):
+    """Get the question description and write to readme file
+
+    :problem_name: the name of the problem
+    :readme_file:  file path of readme.md
+
+    """
+    pass
 
 
 def createFile(current_folder: str, problem_name: str):
