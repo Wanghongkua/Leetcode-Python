@@ -6,7 +6,8 @@
    and `.gitignore` file with the new folder
 2. Add links to `readme.md`
 
-The using method is: `python add2Readme.py 53. Maximum Subarray`
+The using method is:
+`python add2Readme.py --name "Container With Most Water" -i 11 -d medium -t array`
 
 **`update_ideas.py`** can search for comments of each python file and add that
 to **basic ideas**, which requires the comment musk be a short introduction of
