@@ -1,6 +1,11 @@
+import argparse
+import json
 import os
 import subprocess
-import argparse
+from sys import exit
+from typing import Dict, List
+
+import requests
 from termcolor import colored
 
 
@@ -157,16 +162,6 @@ def add2Readme(tag: str, difficulty: str, number: str, problem_name: str):
         print("Closing \"readme.md\"")
 
 
-def getQuestionDescription(problem_name: str, readme_file: str):
-    """Get the question description and write to readme file
-
-    :problem_name: the name of the problem
-    :readme_file:  file path of readme.md
-
-    """
-    pass
-
-
 def createFile(current_folder: str, problem_name: str):
     """Create Problem Folder"""
     print("Do you want to create file for " + colored(problem_name, "red") +
@@ -213,6 +208,79 @@ def existInFile(current_folder: str, problem_name: str) -> int:
     return 0
 
 
+def getQuestionDescription(problem_name: str) -> Dict[str, str]:
+    """Get the question description and write to readme file
+
+    :problem_name: the name of the problem
+    :return:       both the description and examples of the question
+
+    """
+    question = {"description": "", "examples": ""}
+    return question
+
+
+def write2Readme(question: Dict[str, str],
+                 current_folder: str, problem_name: str):
+    """Write problem description to readme.md file
+
+    :question: description of the question
+    :current_folder: current working folder
+    :problem_name: name of the question
+
+    """
+    pass
+
+
+def validate(problem_name: str, number: str,
+             difficulty: str, diffValues: List[str]) -> bool:
+    """ Validate problem name and difficulty by it's number
+
+    :problem_name: name of the problem
+    :number:       index of the problem
+    :difficulty:   the difficulty of the problem
+    :diffValues:   all the difficulty levels' names
+    :returns:      True for correct, False for incorrect
+
+    """
+    # Leetcode API URL to get json of problems on algorithms categories
+    ALGORITHMS_ENDPOINT_URL = "https://leetcode.com/api/problems/algorithms/"
+
+    # Load JSON from API
+    algorithms_problems_json = requests.get(ALGORITHMS_ENDPOINT_URL).content
+    algorithms_problems_json = json.loads(algorithms_problems_json)
+
+    # List to store question_title_slug
+    for child in algorithms_problems_json["stat_status_pairs"]:
+        # Only process free problems
+        if not child["paid_only"]:
+            question_id = child["stat"]["frontend_question_id"]
+            question_title = child["stat"]["question__title"]
+            question_difficulty = diffValues[child["difficulty"]["level"] - 1]
+            if str(question_id) == number:
+                if question_title != problem_name:
+                    print("Question name is incorrect")
+                    return False
+                if question_difficulty != difficulty:
+                    print("Question difficulty is incorrect")
+                    return False
+                return True
+    print("ID not found, please check if ", colored(number, "red"),
+          " is the desired index")
+    return False
+
+
+def belong2tag(number: str, tag: str) -> bool:
+    """verify which problem is belong to the category provided
+
+    :number: The index of the problem
+    :tag: The category of the problem
+    :returns: Whether problem belong to the category
+
+    """
+    CATEGORY_BASE_URL = "https://leetcode.com/tag/"
+    return True
+
+
 if __name__ == "__main__":
     diffValues = ["easy", "medium", "hard"]
 
@@ -241,9 +309,21 @@ if __name__ == "__main__":
 
     number = str(args.index)
 
+    # Validate the problem's name and difficulty by its number
+    if not validate(problem_name, number, difficulty, diffValues):
+        exit()
+
+    # Validate tag based on info provided
+    while not belong2tag(number, tag):
+        print("The tag: ", colored(tag, "red"),
+              " provided doesn't match the problem.")
+        tag = getArg("category")
+
     if not existInReadme(int(number)):
         add2Readme(tag, difficulty, number, problem_name)
     tag = capitalizeArg(tag)
     current_folder = getCurrentFolder(tag, difficulty)
     if not existInFile(current_folder, problem_name):
         createFile(current_folder, problem_name)
+    question = getQuestionDescription(problem_name)
+    write2Readme(question, current_folder, problem_name)
