@@ -3,9 +3,14 @@ import json
 import os
 import subprocess
 from sys import exit
-from typing import Dict, List
+from typing import Dict
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 
 import requests
+#  from bs4 import BeautifulSoup
 from termcolor import colored
 
 
@@ -231,18 +236,15 @@ def write2Readme(question: Dict[str, str],
     pass
 
 
-def validate(problem_name: str, number: str,
-             difficulty: str, diffValues: List[str]) -> bool:
-    """ Validate problem name and difficulty by it's number
+def findOnline(problem_name: str, number: str):
+    """ Find problem by it's number on LeetCode
 
     :problem_name: name of the problem
     :number:       index of the problem
-    :difficulty:   the difficulty of the problem
-    :diffValues:   all the difficulty levels' names
-    :returns:      True for correct, False for incorrect
+    :returns:      The question info for correct, False for incorrect
 
     """
-    # Leetcode API URL to get json of problems on algorithms categories
+    # LeetCode API URL to get json of problems on algorithms categories
     ALGORITHMS_ENDPOINT_URL = "https://leetcode.com/api/problems/algorithms/"
 
     # Load JSON from API
@@ -255,15 +257,11 @@ def validate(problem_name: str, number: str,
         if not child["paid_only"]:
             question_id = child["stat"]["frontend_question_id"]
             question_title = child["stat"]["question__title"]
-            question_difficulty = diffValues[child["difficulty"]["level"] - 1]
             if str(question_id) == number:
                 if question_title != problem_name:
                     print("Question name is incorrect")
                     return False
-                if question_difficulty != difficulty:
-                    print("Question difficulty is incorrect")
-                    return False
-                return True
+                return child
     print("ID not found, please check if ", colored(number, "red"),
           " is the desired index")
     return False
@@ -278,7 +276,27 @@ def belong2tag(number: str, tag: str) -> bool:
 
     """
     CATEGORY_BASE_URL = "https://leetcode.com/tag/"
-    return True
+
+    # Find problem on leetcode webpage
+    url = CATEGORY_BASE_URL + tag.replace(" ", "-").lower()
+
+    driver = webdriver.Chrome()
+    driver.get(url)
+    try:
+        table = WebDriverWait(driver, 20).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "reactable-data"))
+        )
+        questions = table.find_elements_by_tag_name("tr")
+        for question in questions:
+            question_id = question.find_elements_by_tag_name("td")[1]
+            if question_id.text == number:
+                driver.quit()
+                return True
+    except Exception:
+        driver.quit()
+        return False
+    exit()
+    return False
 
 
 if __name__ == "__main__":
@@ -286,38 +304,33 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--tag", help="The category of the problem")
-    parser.add_argument("-d", "--difficulty", choices=diffValues,
-                        help="The difficulty level of the problem")
     parser.add_argument("-i", "--index", type=int,
                         help="The index of the problem")
     parser.add_argument("-n", "--name", help="Name of the problem")
     args = parser.parse_args()
 
+    # Get the category of the problem
     tag = args.tag
     if tag is None:
         tag = getArg("category")
-
-    difficulty = args.difficulty
-    while difficulty is None:
-        difficulty = getArg("difficulty")
-        if difficulty not in diffValues:
-            difficulty = None
-            print("Please select difficulty from these values: " +
-                  colored(" ".join(diffValues), "blue") + ".")
 
     problem_name = args.name
 
     number = str(args.index)
 
     # Validate the problem's name and difficulty by its number
-    if not validate(problem_name, number, difficulty, diffValues):
+    result = findOnline(problem_name, number)
+    if not result:
         exit()
 
     # Validate tag based on info provided
     while not belong2tag(number, tag):
         print("The tag: ", colored(tag, "red"),
               " provided doesn't match the problem.")
-        tag = getArg("category")
+        tag = getArg("tag")
+
+    # Get difficulty
+    difficulty = diffValues[result["difficulty"]["level"] - 1]
 
     if not existInReadme(int(number)):
         add2Readme(tag, difficulty, number, problem_name)
