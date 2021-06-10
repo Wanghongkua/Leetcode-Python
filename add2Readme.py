@@ -283,7 +283,7 @@ def belong2tag(number: str, tag: str) -> bool:
     driver = webdriver.Chrome()
     driver.get(url)
     try:
-        table = WebDriverWait(driver, 20).until(
+        table = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CLASS_NAME, "reactable-data"))
         )
         questions = table.find_elements_by_tag_name("tr")
@@ -292,10 +292,12 @@ def belong2tag(number: str, tag: str) -> bool:
             if question_id.text == number:
                 driver.quit()
                 return True
+        print("The tag: ", colored(tag, "red"), " provided doesn't match")
+        driver.quit()
     except Exception:
+        print("The tag: ", colored(tag, "red"), " provided doesn't exist")
         driver.quit()
         return False
-    exit()
     return False
 
 
@@ -325,8 +327,6 @@ if __name__ == "__main__":
 
     # Validate tag based on info provided
     while not belong2tag(number, tag):
-        print("The tag: ", colored(tag, "red"),
-              " provided doesn't match the problem.")
         tag = getArg("tag")
 
     # Get difficulty
